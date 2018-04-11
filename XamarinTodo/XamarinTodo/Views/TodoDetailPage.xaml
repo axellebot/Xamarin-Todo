@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="XamarinTodo.Views.TodoDetailPage"
+             xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+		     Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Order="Primary" Command="{Binding DeleteItemCommand}"/>
+        <ToolbarItem Text="Cancel" Order="Primary" Command="{Binding CancelItemCommand}"/>
+        <ToolbarItem Text="Save" Order="Primary" Command="{Binding SaveItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+                <Entry Placeholder="Name"  HorizontalOptions="FillAndExpand" Text="{Binding Name}" FontSize="Small" />
+                <Label Text="Notes" FontSize="Small" />
+                <Editor Text="{Binding Notes}" FontSize="Small" VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
